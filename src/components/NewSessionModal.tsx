@@ -22,7 +22,6 @@ const NewSessionModal = ({ isOpen, onClose }: Props) => {
             exit={{ y: 40, opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            {/* Botão de Fechar */}
             <button
               className="absolute top-2 right-3 text-gray-500 hover:text-black text-2xl"
               onClick={onClose}
@@ -31,12 +30,10 @@ const NewSessionModal = ({ isOpen, onClose }: Props) => {
               &times;
             </button>
 
-            {/* Título */}
             <h2 className="text-xl font-semibold mb-4 text-center text-gray-800">
               Nova Sessão de Degustação
             </h2>
 
-            {/* Formulário */}
             <form className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">

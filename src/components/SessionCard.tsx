@@ -22,10 +22,12 @@ const SessionCard = ({ session, onClick }: Props) => {
           className="mb-3 w-full h-48 object-cover rounded-lg"
         />
       )}
-      <h2 className="text-lg font-semibold">{session.wine}</h2>
+      <h2 className="text-lg font-semibold text-purple-800">{session.wine}</h2>
       <p className="text-gray-600">{session.winery}</p>
       <p className="text-sm text-gray-500">{session.location}</p>
-      <p className="text-yellow-600 font-medium mt-1">⭐ {session.rating?.average || "N/A"}</p>
+      <p className="text-yellow-600 font-medium mt-1">
+        ⭐ {session.rating?.average || "N/A"}
+      </p>
     </motion.div>
   );
 };
