@@ -1,5 +1,15 @@
-import { Wine } from "../../api";
 import { motion, AnimatePresence } from "framer-motion";
+
+type Wine = {
+  wine: string;
+  winery: string;
+  location: string;
+  image?: string;
+  rating: {
+    average: number;
+    reviews: string;
+  };
+};
 
 type Props = {
   wine: Wine;
@@ -24,7 +34,7 @@ const WineModal = ({ wine, onClose }: Props) => {
         >
           <button
             onClick={onClose}
-            className="absolute top-2 right-2 text-gray-500 hover:text-black text-xl"
+            className="absolute top-2 right-2 text-bordo-600 hover:text-bordo-800 text-xl"
           >
             ✕
           </button>
@@ -33,14 +43,10 @@ const WineModal = ({ wine, onClose }: Props) => {
             alt={wine.wine}
             className="w-full h-56 object-cover rounded mb-4"
           />
-          <h2 className="text-2xl font-bold mb-2 text-purple-800">{wine.wine}</h2>
-          <p className="text-gray-700">
-            🍇 <strong>{wine.winery}</strong>
-          </p>
+          <h2 className="text-2xl font-bold mb-2 text-bordo-700">{wine.wine}</h2>
+          <p className="text-gray-700">🍇 <strong>{wine.winery}</strong></p>
           <p className="text-sm text-gray-600">📍 {wine.location}</p>
-          <p className="text-yellow-600 mt-2">
-            ⭐ {wine.rating.average} ({wine.rating.reviews})
-          </p>
+          <p className="text-yellow-600 mt-2">⭐ {wine.rating.average} ({wine.rating.reviews})</p>
         </motion.div>
       </motion.div>
     </AnimatePresence>

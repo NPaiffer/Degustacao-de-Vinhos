@@ -23,54 +23,34 @@ const NewSessionModal = ({ isOpen, onClose }: Props) => {
             transition={{ duration: 0.3 }}
           >
             <button
-              className="absolute top-2 right-3 text-gray-500 hover:text-black text-2xl"
+              className="absolute top-2 right-3 text-bordo-500 hover:text-bordo-700 text-2xl"
               onClick={onClose}
               aria-label="Fechar modal"
             >
               &times;
             </button>
 
-            <h2 className="text-xl font-semibold mb-4 text-center text-gray-800">
+            <h2 className="text-xl font-semibold mb-4 text-center text-bordo-700">
               Nova Sessão de Degustação
             </h2>
 
             <form className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Nome do vinho
-                </label>
-                <input
-                  type="text"
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-                  placeholder="Ex: Cabernet Sauvignon"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Vinícola
-                </label>
-                <input
-                  type="text"
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-                  placeholder="Ex: Vinícola Aurora"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Localização
-                </label>
-                <input
-                  type="text"
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-                  placeholder="Ex: Serra Gaúcha, RS"
-                />
-              </div>
+              {["Nome do vinho", "Vinícola", "Localização"].map((label, i) => (
+                <div key={i}>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    {label}
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-bordo-500"
+                    placeholder={`Ex: ${label === "Nome do vinho" ? "Cabernet Sauvignon" : label === "Vinícola" ? "Vinícola Aurora" : "Serra Gaúcha, RS"}`}
+                  />
+                </div>
+              ))}
 
               <button
                 type="submit"
-                className="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg transition font-medium"
+                className="w-full bg-bordo-600 hover:bg-bordo-700 text-white py-2 px-4 rounded-lg transition font-medium"
               >
                 Salvar Sessão
               </button>

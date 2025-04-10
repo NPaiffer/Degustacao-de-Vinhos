@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --bordo-700: #661e26;
+  --bordo-800: #4d181e;
+  --bordo-400: #b23c4b;
+}
+
+.bg-bordo-700 {
+  background-color: var(--bordo-700);
+}
+.bg-bordo-800 {
+  background-color: var(--bordo-800);
+}
+.text-bordo-700 {
+  color: var(--bordo-700);
+}
+.focus\:ring-bordo-400:focus {
+  --tw-ring-color: var(--bordo-400);
+}
